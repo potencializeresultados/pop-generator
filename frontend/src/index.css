@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #FF0000;
+  --secondary-color: #000000;
+  --background-color: #FFFFFF;
+  --text-color: #000000;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+.btn-primary {
+  @apply bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded;
+}
+
+.btn-secondary {
+  @apply bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 rounded;
+}
+
+.btn-outline {
+  @apply border border-red-600 text-red-600 hover:bg-red-600 hover:text-white font-bold py-2 px-4 rounded;
+}
+
+.input-field {
+  @apply border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-gray-700 mb-1;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-md p-6;
+}
+
+.header {
+  @apply bg-red-600 text-white py-4;
+}
+
+.footer {
+  @apply bg-black text-white py-4 mt-8;
+}

@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: pop_generator_backend
+    volumes:
+      - ./backend:/app
+      - ./templates:/app/templates
+      - pop_data:/app/generated_docs
+      - pop_uploads:/app/uploads
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONPATH=/app
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: pop_generator_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  pop_data:
+  pop_uploads:
